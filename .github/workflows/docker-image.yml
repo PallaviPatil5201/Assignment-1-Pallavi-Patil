@@ -1,4 +1,4 @@
-name: Docker Images CI
+name: assignment-1
  
 on:
   push:
