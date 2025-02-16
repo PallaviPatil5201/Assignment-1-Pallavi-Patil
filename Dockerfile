@@ -1,6 +1,11 @@
-FROM busybox
-MAINTAINER Pallavi <pallavi.patil@igtsolutions.com>
-ADD index.html /www/index.html
-EXPOSE 8000
-#create a webserver and sleep forever
-CMD httpd -p 8000 -h /www; tail -f /dev/null
+# Use official Nginx base image
+FROM nginx:alpine
+
+# Copy static HTML files to Nginx default web directory
+COPY . /usr/share/nginx/html
+
+# Expose port 80
+EXPOSE 80
+
+# Start Nginx
+CMD ["nginx", "-g", "daemon off;"]
