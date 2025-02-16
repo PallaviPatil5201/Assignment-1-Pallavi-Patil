@@ -1,4 +1,4 @@
-name: assignment-1
+name: assignment1:latest
  
 on:
   push:
